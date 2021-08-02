@@ -1,0 +1,36 @@
+{
+  "name": "js-api-page",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/Academic-blue) ![](https://img.shields.io/badge/HTML-red) ![](https://img.shields.io/badge/JavaScript-yellow) ![](https://img.shields.io/badge/CSS-blue) ![](https://img.shields.io/badge/Webpack-green)",
+  "private": true,
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "watch": "jest --watch --verbose --coverage *.js",
+    "start": "webpack serve --open",
+    "build": "webpack",
+    "wsass": "sass --watch src/scss:src/css"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StarSheriff2/Javascript-API-Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StarSheriff2/Javascript-API-Page/issues"
+  },
+  "homepage": "https://github.com/StarSheriff2/Javascript-API-Page#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.14.5",
+    "css-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
