@@ -14,10 +14,11 @@ export default class ObjectRenderer {
   static cardBuilder = (element) => {
     const card = document.createElement('div');
     card.classList.add('element-card');
+    card.setAttribute('data-id', `${element.id}`);
     card.innerHTML = `<img src="${element.image}" class="element-card__img">
     <div class="element-card__info">
       <h2 class="element-card__info__title">${element.name}</h2>
-      <img src="./assets/sword.png" alt="sword icon" class="element-card__info__sword-icon">
+      <img src="/src/assets/sword.png" alt="sword icon" class="element-card__info__sword-icon">
     </div>
     <p class="element-card__swords-counter">
       5 swords
