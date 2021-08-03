@@ -5,14 +5,15 @@ import ModalRenderer from './pop_up_window';
 export default class ObjectRenderer {
   static renderElements = async (categoryName) => {
     const array = await API.getObjects(categoryName);
+    array.sort((a, b) => a.id - b.id);
 
-    array.forEach((item) => {
+    for (let i = 0; i < 20; i += 1) {
       const cardsGrid = document.getElementById('cards-grid');
-      const newCard = ObjectRenderer.cardBuilder(item);
+      const newCard = ObjectRenderer.cardBuilder(array[i]);
       cardsGrid.appendChild(newCard);
       const commentsBtn = newCard.lastChild;
       ModalRenderer.getCardBtn(commentsBtn);
-    });
+    }
   };
 
   static cardBuilder = (element) => {
