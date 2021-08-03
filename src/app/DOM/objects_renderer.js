@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import API from '../api/api_methods';
 import ModalRenderer from './pop_up_window';
+import swordIcon from '../../assets/sword.png';
 
 export default class ObjectRenderer {
   static renderElements = async (categoryName) => {
@@ -23,7 +24,7 @@ export default class ObjectRenderer {
     card.innerHTML = `<img src="${element.image}" class="element-card__img">
     <div class="element-card__info">
       <h2 class="element-card__info__title">${element.name}</h2>
-      <img src="/src/assets/sword.png" alt="sword icon" class="element-card__info__sword-icon">
+      <img src="${swordIcon}" alt="sword icon" class="element-card__info__sword-icon">
     </div>
     <p class="element-card__swords-counter">
       5 swords
