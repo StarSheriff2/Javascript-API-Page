@@ -1,0 +1,37 @@
+/* Main Section */
+
+#cards-grid {
+  display: grid;
+}
+
+.element-card {
+  display: grid;
+  justify-items: center;
+  padding: 2rem;
+}
+
+.element-card__img {
+  margin: 2rem 0;
+}
+
+.element-card__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.element-card__info__title {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+.element-card__info__sword-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.element-card__swords-counter {
+  margin: 1rem 0;
+  justify-self: end;
+}

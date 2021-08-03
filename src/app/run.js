@@ -1,7 +1,5 @@
-import { ObjectRenderer } from './DOM/dom_functions';
+import ObjectRenderer from './DOM/dom_functions';
 
 export default async function run() {
-
-  // const objRenderer = new ObjectRenderer();
-  ObjectRenderer.renderElements();
+  ObjectRenderer.renderElements('monsters');
 }
