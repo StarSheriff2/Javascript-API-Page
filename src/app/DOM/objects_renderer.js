@@ -1,17 +1,17 @@
 import API from '../api/api_methods';
 
 export default class ObjectRenderer {
-  renderElements = async (categoryName) => {
+  static renderElements = async (categoryName) => {
     const array = await API.getObjects(categoryName);
 
     array.forEach((item) => {
       const cardsGrid = document.getElementById('cards-grid');
-      const newCard = this.cardBuilder(item);
+      const newCard = ObjectRenderer.cardBuilder(item);
       cardsGrid.appendChild(newCard);
     });
   };
 
-  cardBuilder = (element) => {
+  static cardBuilder = (element) => {
     const card = document.createElement('div');
     card.classList.add('element-card');
     card.innerHTML = `<img src="${element.image}" class="element-card__img">
