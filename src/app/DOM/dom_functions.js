@@ -1,7 +1,5 @@
-import ScoresRenderer from './render_scores';
-import SubmitScoreForm from './submit_score';
+import ObjectRenderer from './objects_renderer';
 
 export {
-  ScoresRenderer,
-  SubmitScoreForm,
+  ObjectRenderer
 };
