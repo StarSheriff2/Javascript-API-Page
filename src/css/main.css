@@ -1,3 +1,6 @@
+@import './_base.css';
+@import './_main_content.css';
+
 .nav-bar {
   height: 60px;
   display: flex;

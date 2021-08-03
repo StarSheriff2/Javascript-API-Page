@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+
+  /* font-family: $font-family; */
+
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+
+a,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 1.3rem 2.5rem;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  background-color: gray;
+}
+
+button:hover {
+  background-color: lightgrey;
+}
