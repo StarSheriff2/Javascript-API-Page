@@ -2,6 +2,9 @@
 
 #cards-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 400px));
+  grid-column-gap: 20px;
+  justify-content: center;
 }
 
 .element-card {
@@ -35,3 +38,16 @@
   margin: 1rem 0;
   justify-self: end;
 }
+
+/*
+  ========================
+
+  Media Queries
+
+  ========================
+*/
+
+/* Medium sized-devices and windows (medium, 768px and up) */
+
+/* @media only screen and (min-width: 768px) {
+} */
