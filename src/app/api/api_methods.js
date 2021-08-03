@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class HyruleCompendiumAPI {
   constructor() {
     this.baseURL = 'https://botw-compendium.herokuapp.com/api/v2';

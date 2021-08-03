@@ -1,4 +1,6 @@
+/* eslint-disable linebreak-style */
 import API from '../api/api_methods';
+import ModalRenderer from './pop_up_window';
 
 export default class ObjectRenderer {
   static renderElements = async (categoryName) => {
@@ -8,6 +10,8 @@ export default class ObjectRenderer {
       const cardsGrid = document.getElementById('cards-grid');
       const newCard = ObjectRenderer.cardBuilder(item);
       cardsGrid.appendChild(newCard);
+      const commentsBtn = newCard.lastChild;
+      ModalRenderer.getCardBtn(commentsBtn);
     });
   };
 
