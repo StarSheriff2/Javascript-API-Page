@@ -1,8 +1,5 @@
 node_modules
 js-api-page.code-workspace
-.eslintrc.json
-.hintrc
-.stylelintrc.json
 ./coverage/
 coverage
 .DS_Store
