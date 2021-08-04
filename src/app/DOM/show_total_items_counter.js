@@ -6,6 +6,6 @@ const getTotalItems = () => {
 const showItemsCounter = () => {
   const monstersBtn = document.getElementById('monsters-btn');
   monstersBtn.textContent = `Monsters(${getTotalItems()})`;
-}
+};
 
 export default showItemsCounter;
