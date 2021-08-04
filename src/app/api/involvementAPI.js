@@ -7,13 +7,33 @@ class InvolvementAPI {
   getLikes = async () => {
     const response = await fetch(`${this.baseURL}/likes/`, {
     });
-    return this.getAPIResponse(response);
+    await this.getAPIResponse(response);
+    const result = await response.json();
+    return result;
   };
+
+  getComments = async () => {
+    const response = await fetch(`${this.baseURL}/comments?item_id=12`, {
+    });
+    const result = await response.json();
+    return result;
+  };
+
+  postComments = async (obj) => {
+    const response = await fetch(`${this.baseURL}/comments/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    });
+    const data = await response.text();
+    return data;
+  }
 
   getAPIResponse = async (response) => {
     if (response.ok) {
-      const likesArray = await response.json();
-      return likesArray;
+      return response;
     }
     const message = `An error has occured: ${response.status}`;
     throw new Error(message);
