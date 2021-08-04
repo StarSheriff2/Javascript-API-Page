@@ -10,6 +10,12 @@ class HyruleCompendiumAPI {
     return this.getAPIResponse(response);
   }
 
+  getElement = async (id) => {
+    const response = await fetch(`${this.baseURL}/entry/${id}`, {
+    });
+    return this.getAPIResponse(response);
+  }
+
   getAPIResponse = async (response) => {
     if (response.ok) {
       const { data } = await response.json();
