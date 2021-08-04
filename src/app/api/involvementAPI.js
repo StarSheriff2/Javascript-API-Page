@@ -12,6 +12,21 @@ class InvolvementAPI {
     return result;
   };
 
+  postLike = async (itemId) => {
+    const response = await fetch(`${this.baseURL}/likes/`, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: itemId,
+      }),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    });
+    await this.getAPIResponse(response);
+    const result = await response.text();
+    return result;
+  };
+
   getComments = async () => {
     const response = await fetch(`${this.baseURL}/comments?item_id=12`, {
     });

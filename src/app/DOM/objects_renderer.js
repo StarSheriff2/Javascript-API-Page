@@ -2,6 +2,7 @@
 import API from '../api/api_methods';
 import likes from '../objects/likes';
 import ModalRenderer from './pop_up_window';
+import CardEvents from './card_events';
 import swordIcon from '../../assets/sword.png';
 
 export default class ObjectRenderer {
@@ -15,6 +16,8 @@ export default class ObjectRenderer {
       cardsGrid.appendChild(newCard);
       const commentsBtn = newCard.lastChild;
       ModalRenderer.getCardBtn(commentsBtn);
+      const cardEvents = new CardEvents(newCard);
+      cardEvents.addLikeListener();
     }
   };
 

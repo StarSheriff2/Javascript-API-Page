@@ -34,6 +34,10 @@
   height: 32px;
 }
 
+.element-card__info__sword-icon:hover {
+  cursor: pointer;
+}
+
 .element-card__swords-counter {
   margin: 1rem 0;
   justify-self: end;
