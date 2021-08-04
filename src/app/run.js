@@ -1,8 +1,12 @@
 /* eslint-disable linebreak-style */
-import ObjectRenderer from './DOM/dom_functions';
+import { ObjectRenderer, showItemsCounter } from './DOM/dom_functions';
 import likes from './objects/likes';
+import logo from '../assets/logo.png';
 
 export default async function run() {
+  const logoDiv = document.querySelector('.img-container');
+  logoDiv.innerHTML = `<img src="${logo}" alt="zelda-logo">`;
   await likes.mapLikes();
-  ObjectRenderer.renderElements('monsters');
+  await ObjectRenderer.renderElements('monsters');
+  showItemsCounter();
 }
