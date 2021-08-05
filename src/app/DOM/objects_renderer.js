@@ -15,7 +15,7 @@ export default class ObjectRenderer {
       const newCard = ObjectRenderer.cardBuilder(item, likes.getItemLikes(item.id));
       cardsGrid.appendChild(newCard);
       const commentsBtn = newCard.lastChild;
-      ModalRenderer.getCardBtn(commentsBtn);
+      ModalRenderer.displayModal(commentsBtn);
       const cardEvents = new CardEvents(newCard);
       cardEvents.addLikeListener();
     });
