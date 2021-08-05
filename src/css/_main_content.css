@@ -36,6 +36,8 @@
 
 .element-card__info__sword-icon:hover {
   cursor: pointer;
+  content:url('../assets/sword-2.png');
+
 }
 
 .element-card__swords-counter {
