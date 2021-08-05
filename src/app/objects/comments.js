@@ -38,13 +38,9 @@ class Comments {
     const myItem = myArr[myArr.length - 1];
     const commentsInfo = document.createElement('div');
     commentsInfo.classList.add('comments-info');
-    const commentsDate = document.createElement('span');
-    commentsDate.classList.add('comments-date');
-    commentsDate.textContent = `${myItem.creation_date}`;
-    commentsInfo.appendChild(commentsDate);
-    const commentsText = document.createElement('span');
-    commentsText.textContent = `${myItem.username}: ${myItem.comment}`;
-    commentsInfo.appendChild(commentsText);
+    commentsInfo.innerHTML = `
+    <span class="comments-date">${myItem.creation_date}</span>
+    <span>${myItem.username}: ${myItem.comment}</span></div>`;
     parent.appendChild(commentsInfo);
   }
 }
