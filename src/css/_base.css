@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 *,
 *::after,
 *::before {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 ul,
@@ -20,9 +23,6 @@ html {
 
 body {
   font-size: 1.6rem;
-
-  /* font-family: $font-family; */
-
   color: rgb(0, 0, 0);
   background-color: white;
 }
