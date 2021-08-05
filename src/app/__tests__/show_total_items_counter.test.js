@@ -1,7 +1,7 @@
-/* eslint-disable linebreak-style */
 /**
  * @jest-environment jsdom
  */
+/* eslint-disable linebreak-style */
 
 import showItemsCounter from '../DOM/show_total_items_counter';
 

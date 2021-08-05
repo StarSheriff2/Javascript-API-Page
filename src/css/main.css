@@ -1,6 +1,12 @@
 @import './_base.css';
 @import './_main_content.css';
 
+.hidden {
+  position: absolute;
+  left: 100000px;
+  height: 0;
+}
+
 .nav-bar {
   height: 60px;
   display: flex;
