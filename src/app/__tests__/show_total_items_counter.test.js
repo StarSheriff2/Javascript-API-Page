@@ -2,12 +2,12 @@
  * @jest-environment jsdom
  */
 
-import showItemsCounter from '../DOM/show_total_items_counter'
+import showItemsCounter from '../DOM/show_total_items_counter';
 
 describe('showItemsCounter()', () => {
   test('returns text with total number of items in page', () => {
     // Arrange
-    const body = document.body;
+    const { body } = document;
 
     const navLinkWithItemCounter = document.createElement('button');
     navLinkWithItemCounter.setAttribute('id', 'monsters-btn');
