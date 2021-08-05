@@ -4,6 +4,7 @@ import API from '../api/api_methods';
 import involvementAPI from '../api/involvementAPI';
 import Comments from '../objects/comments';
 import close from '../../assets/close.svg';
+import getCounter from './comments_counter';
 
 const body = document.querySelector('body');
 export default class ModalRenderer {
@@ -11,12 +12,13 @@ export default class ModalRenderer {
     item.addEventListener('click', async (e) => {
       const myId = e.target.parentElement.getAttribute('data-id');
       const myComments = await involvementAPI.getComments(myId);
+      const itemsNumber = getCounter(myComments);
       const myMonster = await API.getElement(myId);
-      ModalRenderer.renderElements(myMonster, myId, myComments);
+      ModalRenderer.renderElements(myMonster, myId, myComments, itemsNumber);
     });
   }
 
-  static renderElements = (item, id, comments) => {
+  static renderElements = (item, id, comments, itemsNumber) => {
     const modalContainer = document.createElement('div');
     modalContainer.classList.add('modal-container');
     modalContainer.setAttribute('data-id', `${id}`);
@@ -39,7 +41,7 @@ export default class ModalRenderer {
     </section>
     <section class="comments-container">
       <h2 class="comments-title">Comments<span class="comments-counter">
-      ${(comments === -1) ? 0 : comments.length}</span></h2>
+      ${(itemsNumber === -1) ? 0 : itemsNumber}</span></h2>
       <div class="comments-info">
         <span class="comments-date">2021-08-04</span>
         <span>Jane: Hello</span></div>
