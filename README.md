@@ -22,7 +22,7 @@ The Kanban methodology was employed to work in this project, where each develope
 - Browse through a list of all elements in the **monsters** category
 - Like any monster
 - See information about each monster by clicking on the comment button
-- Comment any monster card
+- Comment on any monster card
 ### Live Demo
 See demo here [https://github.com/StarSheriff2/Leaderboard-Eureka-JS/](https://starsheriff2.github.io/Leaderboard-Eureka-JS/)
 
