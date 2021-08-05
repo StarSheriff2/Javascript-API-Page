@@ -10,7 +10,7 @@
 
 > The website shows a list of elements from the Hyrule Compendium API.
 
-![screenshot](./other/app_screenshot.png)
+<img width="1280" alt="app_screenshot" src="https://user-images.githubusercontent.com/61250665/128429391-58c04cc0-da52-4af7-9f63-79c8efde6d3b.png">
 
 ## About
 The page consumes data stored in 2 external **APIs**. The base *API* is located [here](https://botw-compendium.herokuapp.com/api/v2). We pull all the main content of the page from it. We use another **API** located [here](https://us-central1-involvement-api.cloudfunctions.net/capstoneApi) to store all interactions on the page, such as likes and comments.
@@ -116,5 +116,5 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://github.com/StarSheriff2/Javascript-API-Page/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/StarSheriff2/Javascript-API-Page/blob/development/LICENSE) licensed.
 
