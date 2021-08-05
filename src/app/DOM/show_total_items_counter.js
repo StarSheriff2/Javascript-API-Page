@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const getTotalItems = () => {
   const allCards = document.querySelector('#cards-grid').children;
   return allCards.length;

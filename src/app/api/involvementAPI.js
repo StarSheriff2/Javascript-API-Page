@@ -27,11 +27,15 @@ class InvolvementAPI {
     return result;
   };
 
-  getComments = async () => {
-    const response = await fetch(`${this.baseURL}/comments?item_id=12`, {
+  getComments = async (id) => {
+    const response = await fetch(`${this.baseURL}/comments?item_id=${id}`, {
     });
-    const result = await response.json();
-    return result;
+    const responseStatus = await response.ok;
+    if (responseStatus) {
+      const result = await response.json();
+      return result;
+    }
+    return -1;
   };
 
   postComments = async (obj) => {
@@ -42,8 +46,12 @@ class InvolvementAPI {
       },
       body: JSON.stringify(obj),
     });
-    const data = await response.text();
-    return data;
+    const responseStatus = await response.ok;
+    if (responseStatus) {
+      const data = await response.text();
+      return data;
+    }
+    return [];
   }
 
   getAPIResponse = async (response) => {
