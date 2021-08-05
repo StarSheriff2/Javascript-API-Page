@@ -1,6 +1,8 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-plusplus */
 import API from '../api/api_methods';
+import involvementAPI from '../api/involvementAPI';
+import Comments from '../objects/comments';
 import close from '../../assets/close.svg';
 
 const body = document.querySelector('body');
@@ -8,14 +10,20 @@ export default class ModalRenderer {
   static getCardBtn(item) {
     item.addEventListener('click', async (e) => {
       const myId = e.target.parentElement.getAttribute('data-id');
+      const myComments = await involvementAPI.getComments(myId);
       const myMonster = await API.getElement(myId);
-      ModalRenderer.renderElements(myMonster);
+      await ModalRenderer.renderElements(myMonster, myId, myComments);
     });
   }
 
-  static renderElements = async (item) => {
+  static loadContent() {
+    window.addEventListener('DOMContentLoaded', Comments.renderElements());
+  }
+
+  static renderElements = (item, id, comments) => {
     const modalContainer = document.createElement('div');
     modalContainer.classList.add('modal-container');
+    modalContainer.setAttribute('data-id', `${id}`);
 
     const closeBtn = document.createElement('button');
     closeBtn.classList.add('close-btn');
@@ -67,21 +75,24 @@ export default class ModalRenderer {
     commentsTitle.textContent = 'Comments';
     const commentsCounter = document.createElement('span');
     commentsCounter.classList.add('comments-counter');
-    commentsCounter.textContent = 10;
+    commentsCounter.textContent = (comments === -1) ? 0 : comments.length;
     commentsTitle.appendChild(commentsCounter);
     commentsContainer.appendChild(commentsTitle);
-    const commentsInfo = document.createElement('div');
-    commentsInfo.classList.add('comments-info');
-    const commentsDate = document.createElement('span');
-    commentsDate.classList.add('comments-date');
-    commentsDate.textContent = '24/12/1900';
-    commentsInfo.appendChild(commentsDate);
-    const commentsText = document.createElement('span');
-    commentsText.textContent = 'UserName: text';
-    commentsInfo.appendChild(commentsText);
-    commentsContainer.appendChild(commentsInfo);
+    if (comments !== -1) {
+      comments.forEach((item) => {
+        const commentsInfo = document.createElement('div');
+        commentsInfo.classList.add('comments-info');
+        const commentsDate = document.createElement('span');
+        commentsDate.classList.add('comments-date');
+        commentsDate.textContent = `${item.creation_date}`;
+        commentsInfo.appendChild(commentsDate);
+        const commentsText = document.createElement('span');
+        commentsText.textContent = `${item.username}: ${item.comment}`;
+        commentsInfo.appendChild(commentsText);
+        commentsContainer.appendChild(commentsInfo);
+      });
+    }
     modalContainer.appendChild(commentsContainer);
-
     const formContainer = document.createElement('section');
     formContainer.classList.add('form-container');
     const addTitle = document.createElement('h2');
@@ -93,6 +104,7 @@ export default class ModalRenderer {
     form.setAttribute('action', 'submit');
     formContainer.appendChild(form);
     const textInput = document.createElement('input');
+    textInput.setAttribute('id', 'user');
     textInput.setAttribute('type', 'text');
     textInput.setAttribute('placeholder', 'Your Name');
     form.appendChild(textInput);
@@ -107,8 +119,9 @@ export default class ModalRenderer {
     btnContainer.classList.add('btn-container');
     const submitBtn = document.createElement('button');
     submitBtn.classList.add('comment-btn');
-    submitBtn.setAttribute('type', 'submit');
+    submitBtn.setAttribute('type', 'button');
     btnContainer.appendChild(submitBtn);
+    Comments.addEvent(submitBtn);
     submitBtn.textContent = 'Add comment';
     formContainer.appendChild(btnContainer);
     modalContainer.appendChild(formContainer);
