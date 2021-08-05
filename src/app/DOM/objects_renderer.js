@@ -10,15 +10,15 @@ export default class ObjectRenderer {
     const array = await API.getObjects(categoryName);
     array.sort((a, b) => a.id - b.id);
 
-    for (let i = 0; i < 20; i += 1) {
+    array.forEach((item) => {
       const cardsGrid = document.getElementById('cards-grid');
-      const newCard = ObjectRenderer.cardBuilder(array[i], likes.getItemLikes(array[i].id));
+      const newCard = ObjectRenderer.cardBuilder(item, likes.getItemLikes(item.id));
       cardsGrid.appendChild(newCard);
       const commentsBtn = newCard.lastChild;
       ModalRenderer.getCardBtn(commentsBtn);
       const cardEvents = new CardEvents(newCard);
       cardEvents.addLikeListener();
-    }
+    });
   };
 
   static cardBuilder = (element, likes) => {
