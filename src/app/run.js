@@ -9,5 +9,4 @@ export default async function run() {
   await likes.mapLikes();
   await ObjectRenderer.renderElements('monsters');
   showItemsCounter();
-  ObjectRenderer.renderElements('monsters');
 }
