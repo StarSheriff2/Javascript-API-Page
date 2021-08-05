@@ -2,10 +2,12 @@
 /* eslint-disable no-plusplus */
 import likeBtnHandler from './like_event_handler';
 import likes from '../objects/likes';
+import ModalRenderer from './pop_up_window';
 
 export default class CardEvents {
   constructor(card) {
     this.likeBtn = card.querySelector('.element-card__info__sword-icon');
+    this.commentBtn = card.lastChild;
   }
 
   updateAllCards = () => {
@@ -16,6 +18,17 @@ export default class CardEvents {
       const likesCounter = card.childNodes[4];
       await likes.mapLikes();
       likesCounter.textContent = `${likes.getItemLikes(itemId)} swords`;
+    });
+  }
+
+  addListeners = () => {
+    this.addLikeListener();
+    this.addCommentListener();
+  }
+
+  addCommentListener = () => {
+    this.commentBtn.addEventListener('click', async (e) => {
+      await ModalRenderer.commentBtnHandler(e);
     });
   }
 

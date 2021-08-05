@@ -8,15 +8,13 @@ import getCounter from './comments_counter';
 
 const body = document.querySelector('body');
 export default class ModalRenderer {
-  static displayModal(item) {
-    item.addEventListener('click', async (e) => {
-      const myId = e.target.parentElement.getAttribute('data-id');
-      const myComments = await involvementAPI.getComments(myId);
-      const itemsNumber = getCounter(myComments);
-      const myMonster = await API.getElement(myId);
-      ModalRenderer.renderElements(myMonster, myId, myComments, itemsNumber);
-    });
-  }
+  static commentBtnHandler = async (e) => {
+    const myId = e.target.parentElement.getAttribute('data-id');
+    const myComments = await involvementAPI.getComments(myId);
+    const itemsNumber = getCounter(myComments);
+    const myMonster = await API.getElement(myId);
+    ModalRenderer.renderElements(myMonster, myId, myComments, itemsNumber);
+  };
 
   static renderElements = (item, id, comments, itemsNumber) => {
     const modalContainer = document.createElement('div');
