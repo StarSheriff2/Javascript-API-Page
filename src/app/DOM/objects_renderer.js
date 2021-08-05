@@ -25,9 +25,10 @@ export default class ObjectRenderer {
     const card = document.createElement('div');
     card.classList.add('element-card');
     card.setAttribute('data-id', `${element.id}`);
+    card.setAttribute('tabindex', '0');
     card.innerHTML = `<img src="${element.image}" class="element-card__img">
     <div class="element-card__info">
-      <h2 class="element-card__info__title">${element.name}</h2>
+      <h3 class="element-card__info__title">${element.name}</h3>
       <img src="${swordIcon}" alt="sword icon" class="element-card__info__sword-icon">
     </div>
     <p class="element-card__swords-counter">
