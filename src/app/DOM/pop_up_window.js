@@ -22,8 +22,8 @@ export default class ModalRenderer {
     modalContainer.setAttribute('data-id', `${id}`);
     modalContainer.innerHTML = `
     <button class="close-btn" type="button" style="background-image: url(${close});"></button>
-    <div class="img-container">
-      <img class="modal-image" alt="zelda-logo" src="${item.image}">
+    <div class="modal-img-container">
+      <img class="modal-image" alt="monster-img" src="${item.image}">
     </div>
     <section class="info-container">
       <h1 class="modal-title">${item.name}</h1>
@@ -32,17 +32,15 @@ export default class ModalRenderer {
           <span>${item.description}</span>
         </div>
         <div class="stats-container">
-          <span>Drops: ${item.drops}</span>
-          <span>Locations: ${item.common_locations}</span>
+          <span>Drops: <br> ${item.drops}</span>
+          <span>Locations: <br> ${item.common_locations}</span>
         </div>
       </div>
     </section>
     <section class="comments-container">
       <h2 class="comments-title">Comments<span class="comments-counter">
       ${(itemsNumber === -1) ? 0 : itemsNumber}</span></h2>
-      <div class="comments-info">
-        <span class="comments-date">2021-08-04</span>
-        <span>Jane: Hello</span></div>
+      <div class="comments-overflow">
       <div class="comments-info">
     </section>
     <section class="form-container">
@@ -56,7 +54,7 @@ export default class ModalRenderer {
       </div>
     </section>`;
     body.appendChild(modalContainer);
-    const commentsContainer = document.querySelector('.comments-container');
+    const commentsContainer = document.querySelector('.comments-overflow');
     const closeBtn = document.querySelector('.close-btn');
     const submitBtn = document.querySelector('.comment-btn');
     ModalRenderer.commentsLoop(comments, commentsContainer);
@@ -71,7 +69,7 @@ export default class ModalRenderer {
         commentsInfo.classList.add('comments-info');
         commentsInfo.innerHTML = `
           <span class="comments-date">${item.creation_date}</span>
-          <span>${item.username}: ${item.comment}</span></div>`;
+          <span class="comments-text">${item.username}: ${item.comment}</span></div>`;
         parent.appendChild(commentsInfo);
       });
     }
@@ -82,4 +80,16 @@ export default class ModalRenderer {
       body.removeChild(item.parentElement);
     });
   }
+
+  static async removeModal() {
+    const body = document.querySelector('body');
+    body.addEventListener('click', (e) => {
+      const modal = document.querySelector('.modal-container');
+      if (!modal.contains(e.target)) {
+        body.removeChild(modal);
+      }
+    });
+  }
 }
+
+ModalRenderer.removeModal();
