@@ -1,0 +1,17 @@
+.page-footer {
+  margin-top: 28px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  border-top: 1px solid lightgray;
+}
+
+.page-footer p {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 44px;
+}

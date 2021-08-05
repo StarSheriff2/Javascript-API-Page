@@ -18,7 +18,7 @@ class Comments {
       const userInput = document.getElementById('user');
       const commentInput = document.getElementById('comments-text');
       const modalContainer = document.querySelector('.modal-container');
-      const commentsContainer = document.querySelector('.comments-container');
+      const commentsContainer = document.querySelector('.comments-overflow');
       const myId = modalContainer.dataset.id;
       const myObj = Comments.addComment(myId, userInput.value, commentInput.value);
       await involvementAPI.postComments(myObj);
