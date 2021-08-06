@@ -19,10 +19,12 @@ class Comments {
       const commentInput = document.getElementById('comments-text');
       const modalContainer = document.querySelector('.modal-container');
       const commentsContainer = document.querySelector('.comments-overflow');
+      const form = document.querySelector('.comments-form');
       const myId = modalContainer.dataset.id;
       const myObj = Comments.addComment(myId, userInput.value, commentInput.value);
       await involvementAPI.postComments(myObj);
       await Comments.updateComments(myId, commentsContainer);
+      form.reset();
     });
   }
 

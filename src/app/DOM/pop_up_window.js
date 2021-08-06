@@ -60,6 +60,7 @@ export default class ModalRenderer {
     ModalRenderer.commentsLoop(comments, commentsContainer);
     Comments.addEvent(submitBtn);
     ModalRenderer.closeModal(closeBtn);
+    ModalRenderer.removeModal(modalContainer, body);
   };
 
   static commentsLoop(arr, parent) {
@@ -81,15 +82,13 @@ export default class ModalRenderer {
     });
   }
 
-  static async removeModal() {
-    const body = document.querySelector('body');
-    body.addEventListener('click', (e) => {
-      const modal = document.querySelector('.modal-container');
-      if (!modal.contains(e.target)) {
-        body.removeChild(modal);
+  static removeModal(element, parent) {
+    window.addEventListener('click', (e) => {
+      if (parent.contains(element)) {
+        if (!element.contains(e.target)) {
+          parent.removeChild(element);
+        }
       }
     });
   }
 }
-
-ModalRenderer.removeModal();
