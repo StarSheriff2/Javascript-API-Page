@@ -5,7 +5,7 @@
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid lightgray;
-  padding: 3.5rem 0;
+  padding: 6rem 0;
 }
 
 .img-container {
@@ -39,6 +39,11 @@
   background-color: transparent;
   cursor: pointer;
   color: #244045;
+}
+
+.nav-links button:hover {
+  color: #902923;
+  transition: 200ms ease;
 }
 
 @media only screen and (min-width: 990px) {
