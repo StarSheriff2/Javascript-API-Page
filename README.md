@@ -24,7 +24,7 @@ The Kanban methodology was employed to work in this project, where each develope
 - See information about each monster by clicking on the comment button
 - Comment on any monster card
 ### Live Demo
-See demo here [https://github.com/StarSheriff2/Leaderboard-Eureka-JS/](https://starsheriff2.github.io/Leaderboard-Eureka-JS/)
+See demo here [https://github.com/StarSheriff2/Leaderboard-Eureka-JS/](https://starsheriff2.github.io/Javascript-API-Page/)
 
 ### Built With
 - HTML, CSS, JS
