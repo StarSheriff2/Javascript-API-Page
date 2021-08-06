@@ -10,14 +10,18 @@ export default class CardEvents {
     this.commentBtn = card.lastChild;
   }
 
-  updateAllCards = () => {
+  updateAllCards = async (itemLikesObj) => {
     const cardNodes = document.querySelectorAll('.element-card');
+    await likes.mapLikes();
 
-    cardNodes.forEach(async (card) => {
+    cardNodes.forEach((card) => {
       const itemId = card.dataset.id;
       const likesCounter = card.childNodes[4];
-      await likes.mapLikes();
-      likesCounter.textContent = `${likes.getItemLikes(itemId)} swords`;
+      const itemLikes = likes.getItemLikes(itemId);
+      if (itemId === itemLikesObj.id && itemLikes === itemLikesObj.likes) {
+        return;
+      }
+      likesCounter.textContent = `${itemLikes} swords`;
     });
   }
 
@@ -33,9 +37,9 @@ export default class CardEvents {
   }
 
   addLikeListener = () => {
-    this.likeBtn.addEventListener('mousedown', async (e) => {
-      await likeBtnHandler(e);
-      this.updateAllCards();
+    this.likeBtn.addEventListener('click', async (e) => {
+      const itemLikesObj = await likeBtnHandler(e);
+      if (itemLikesObj) this.updateAllCards(itemLikesObj);
     });
   }
 }

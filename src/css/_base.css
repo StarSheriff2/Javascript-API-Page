@@ -6,7 +6,6 @@
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
 }
 
 ul,
@@ -17,6 +16,7 @@ li {
 }
 
 html {
+  font-family: 'Lato', sans-serif;
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -24,7 +24,7 @@ html {
 body {
   font-size: 1.6rem;
   color: rgb(0, 0, 0);
-  background-color: white;
+  background-color: #d6d5c9;
 }
 
 a,
@@ -37,19 +37,22 @@ a:hover {
 }
 
 button {
-  padding: 1.3rem 2.5rem;
-  font-size: 1rem;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.8rem;
   border: none;
   cursor: pointer;
-  background-color: lightgrey;
-}
-
-button:hover {
-  background-color: gray;
+  background-color: white;
+  color: #244045;
+  border-radius: 5px;
+  position: relative;
 }
 
 .hidden {
   position: absolute;
   left: -100000px;
   height: 0;
+}
+
+.blur {
+  filter: blur(5px);
 }
