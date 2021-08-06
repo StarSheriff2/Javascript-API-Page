@@ -1,0 +1,5 @@
+node_modules
+js-api-page.code-workspace
+./coverage/
+coverage
+.DS_Store

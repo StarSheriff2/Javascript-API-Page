@@ -6,37 +6,42 @@
 ![](https://img.shields.io/badge/JavaScript-yellow)
 ![](https://img.shields.io/badge/CSS-blue)
 ![](https://img.shields.io/badge/Webpack-green)
+![](https://img.shields.io/badge/Jest-orange)
 
-<General Description> The app consumes data stored in an external **API** service located [here](https://).
+> The website shows a list of elements from the Hyrule Compendium API.
 
-> Brief description
-
-![screenshot](./other/app_screenshot.png)
+<img width="1280" alt="app_screenshot" src="https://user-images.githubusercontent.com/61250665/128429391-58c04cc0-da52-4af7-9f63-79c8efde6d3b.png">
 
 ## About
+The page consumes data stored in 2 external **APIs**. The base *API* is located [here](https://botw-compendium.herokuapp.com/api/v2). We pull all the main content of the page from it. We use another **API** located [here](https://us-central1-involvement-api.cloudfunctions.net/capstoneApi) to store all interactions on the page, such as likes and comments.
 
+We used **async** and **await** to handle all API calls. We compiled the project using Webpack.
 
-
+The Kanban methodology was employed to work in this project, where each developer owned one main feature implementation.
 ### Features:
--
+- Browse through a list of all elements in the **monsters** category
+- Like any monster
+- See information about each monster by clicking on the comment button
+- Comment on any monster card
 ### Live Demo
-See demo here [https://github.com/StarSheriff2/Leaderboard-Eureka-JS/](https://starsheriff2.github.io/Leaderboard-Eureka-JS/)
+See demo here [https://starsheriff2.github.io/Javascript-API-Page/](https://starsheriff2.github.io/Javascript-API-Page/)
 
 ### Built With
 - HTML, CSS, JS
 - NPM 7.18.1
-- Webpack 5.44.0
+- Webpack 5.48.0
 - HtmlWebpackPlugin
-- webpack-dev-server
+- webpack-dev-server 3.11.2
 - Jest 27.0.6
-- SASS 1.35.1
 - Linters: ESLint, Stylint, WebHint
 - VS Code
 
 ### About the API
-- This app consumes a public API located at https://
-- The API allows the following calls:
-- The API calls are made according to its documentation, which can be accessed [here]()
+
+- This app consumes two public APIs located at https://botw-compendium.herokuapp.com/api/v2 and https://us-central1-involvement-api.cloudfunctions.net/capstoneApi
+- The documentation for the APIs can be accessed here:
+    - [Hyrule Compendium](https://gadhagod.github.io/Hyrule-Compendium-API/#/)
+    - [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270)
 
 ## Getting Started
 
@@ -64,30 +69,24 @@ To get a local copy up and running, follow these simple example steps.
 ## Development
 
 ### Bundle project
-- `npm run build`
 
-### To compile SCSS
-- `npm run wsass`
+- `npm run build`
 ### Testing
 To test, run
 
 - `npm test`
 
 ### Linters
-To run the linters included in this repository, you will need to install them locally. **Note:** You will need node.js for this and npm:
-- to install WebHint, run `npm install --save-dev hint@6.x`
-- for Stylelint, `npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x`
-- for ESlint, `npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x`
-
-To run the linters, go the root directory of your repository, and copy/paste the following commands in your terminal:
-- to check the HTML file, `npx hint`
-- to check the stylesheets, `npx stylelint "**/*.{css,scss}"`
-- to check the JS files, `npx eslint`
+To run the linters included in this repository, go to the root directory of your repository and copy/paste the following commands into your terminal:
+(**Note:** Make sure you run `npm install` before you do this)
+- to run WebHint, `npx hint .`
+- for Stylelint, `npx stylelint "**/*.{css,scss}"`
+- for ESlint, `npx eslint.`
 
 ## Usage
 
-- Submit a new score by entering your name and your score
-- To see the latest scores submitted by other players, just hit `Refresh`
+- Like any monster by clicking on the sword that is visible in the card
+- To comment, click on the comment button and enter your comment information
 
 ## Author
 
@@ -107,11 +106,15 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/StarSheriff2/Javascript-API-Page/issues).
 
+## 🤝 Acknowledgements
+
+[Hyrule Compendium API](https://gadhagod.github.io/Hyrule-Compendium-API/#/) 🎮
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://github.com/StarSheriff2/Leaderboard-Eureka-JS/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/StarSheriff2/Javascript-API-Page/blob/development/LICENSE) licensed.
 

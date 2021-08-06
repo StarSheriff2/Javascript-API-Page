@@ -1,0 +1,54 @@
+/* Main Section */
+
+#cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  grid-column-gap: 120px;
+  grid-row-gap: 60px;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.element-card {
+  display: grid;
+  justify-items: center;
+  padding: 2rem;
+  border: lightgrey solid 2px;
+  border-radius: 15px;
+  background: linear-gradient(to top, #244045 10%, transparent), #d3d9da;
+  color: white;
+}
+
+.element-card__img {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.element-card__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.element-card__info__title {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+.element-card__info__sword-icon {
+  width: 32px;
+  height: 32px;
+  filter: invert();
+}
+
+.element-card__info__sword-icon:hover {
+  cursor: pointer;
+  content: url('../assets/sword-2.png');
+}
+
+.element-card__swords-counter {
+  margin: 1rem 0;
+  justify-self: end;
+}

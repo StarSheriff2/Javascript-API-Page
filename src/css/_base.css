@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+
+a,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 1.3rem 2.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+button:hover {
+  background-color: gray;
+}
+
+.hidden {
+  position: absolute;
+  left: -100000px;
+  height: 0;
+}
