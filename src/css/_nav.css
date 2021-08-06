@@ -38,6 +38,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  color: #244045;
 }
 
 @media only screen and (min-width: 990px) {
