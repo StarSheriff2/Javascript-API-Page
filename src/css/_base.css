@@ -55,4 +55,5 @@ button {
 
 .blur {
   filter: blur(5px);
+  mix-blend-mode: multiply;
 }
